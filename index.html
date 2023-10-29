@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<link rel="stylesheet" href="app.css" type="text/css" />
+
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  </head>
+<body>
+  
+  <div class="heade-touch top-open">
+    <button class="button-btn">
+      <span class="fa-solid fa-arrow-right icon-top"></span> 
+      <span class="texts">go ahead </span>
+    </button>
+    <div class="top-heade informaction">
+      <span class="top-icons">
+        <i class="fa-brands fa-instagram icon-in"></i>
+      </span>
+      <span class="btn-close tops">
+        <i class="fa-solid fa-times"></i>
+      </span>
+      <h2 class="text-sn">
+       hello welcome 
+       <span class="text-tab"></span>
+      </h2>
+      <span class="text-desc">Make friends with (XIABU) on Instagram and share good moments, conversation, publications and future project by accessing the following links</span>
+      <button class="btn-submt top-link">
+        <i class="fa-solid fa-link top-h"></i>
+        <span class="text-tops">
+         do here 
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="message"></div>
+<script>
+  const button = document.querySelector(".button-btn");
+  const icons = document.querySelector(".icon-top");
+  const text = document.querySelector(".texts")
+  const headTouch = document.querySelector(".heade-touch");
+  const infom = document.querySelector(".top-heade");
+  if(button){
+     button.addEventListener("click", ()=>{
+       icons.classList.add("active");
+       button.classList.add("top-left");
+       text.classList.add("top-text");
+       headTouch.classList.add("top-width");
+       infom.classList.add("doggle")
+     })
+  }
+  const x = document.querySelectorAll(".btn-close");
+  x.forEach((tab) =>{
+     tab.addEventListener("click", ( ) =>{
+       icons.classList.remove("active");
+       button.classList.remove("top-left");
+       text.classList.remove("top-text");
+       infom.classList.remove("doggle")
+       headTouch.classList.remove("top-width")
+       mess.style.display="none";
+     })
+  })
+  //press the button twice to activate
+  const unite = "2";
+  const btnUnit = document.querySelector(".top-link")
+  const mess = document.querySelector(".message");
+  function toggFunct(){
+     if(btnUnit >unite + 1){
+        mess.style.display="flex";
+        mess.innerHTML = `
+         <h2>Click to confirm </h2>
+         <a href="https://instagram.com/gm2144_?igshid=MzMyNGUyNmU2YQ==">
+         www.intagram.com</a>
+        `;
+    }   
+  }
+  btnUnit.addEventListener("click", toggFunct);
+  // confirm your name to say hello later 
+  function myName( ){
+  let my_name = prompt("For entering your name to say hello later ");
+  let welcom = "Hello welcome";
+  let unText = document.querySelector(".text-tab");
+     if(my_name != unText){
+        unText.innerText="#"+my_name;
+     }
+     return my_name;
+  }
+  myName();
+</script>
+</body>
+</html>
+
+
